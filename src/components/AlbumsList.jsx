@@ -10,6 +10,7 @@ export default class AlbumsList extends Component {
     return (
       <div className="AlbumsList">
         <p>{ `Resultado de álbuns de: ${artistName}` }</p>
+
         <ul>
           {albums.map((album) => (
             <Link
