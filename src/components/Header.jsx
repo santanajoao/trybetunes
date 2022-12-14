@@ -40,9 +40,7 @@ export default class Header extends Component {
             </Link>
           </li>
           <li>
-            <Link to="/profile" data-testid="link-to-profile">
-              Perfil
-            </Link>
+            <Link to="/profile" data-testid="link-to-profile">Perfil</Link>
           </li>
         </ul>
       </header>
