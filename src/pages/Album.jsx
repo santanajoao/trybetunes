@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import getMusics from '../services/musicsAPI';
-import MusicCard from '../components/MusicCard';
+import AlbumContent from '../components/AlbumContent';
 
 export default class Album extends Component {
   state = {
     albumMusics: [],
     collectionName: '',
     artistName: '',
+    isLoading: false,
   };
 
   componentDidMount() {
@@ -26,20 +27,17 @@ export default class Album extends Component {
     });
   };
 
+  handleLoading = () => {
+    this.setState(({ isLoading }) => ({
+      isLoading: !isLoading,
+    }));
+  };
+
   render() {
-    const { collectionName, artistName, albumMusics } = this.state;
     return (
       <div data-testid="page-album">
         <Header />
-        <main>
-          <h1 data-testid="album-name">{ collectionName }</h1>
-          <h2 data-testid="artist-name">{ artistName }</h2>
-          <ul>
-            {albumMusics.map((music) => (
-              <MusicCard key={ music.trackId } { ...music } />
-            ))}
-          </ul>
-        </main>
+        <AlbumContent { ...this.state } handleLoading={ this.handleLoading } />
       </div>
     );
   }
