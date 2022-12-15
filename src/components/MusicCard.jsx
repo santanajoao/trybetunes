@@ -1,18 +1,31 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { addSong } from '../services/favoriteSongsAPI';
+import { addSong, removeSong } from '../services/favoriteSongsAPI';
 
 export default class MusicCard extends Component {
+  handleSong = async (music, isFavorite) => {
+    if (isFavorite) {
+      await removeSong(music);
+    } else {
+      await addSong(music);
+    }
+  };
+
   handleCheckboxClick = async () => {
-    const { music, handleLoading, updateFavoriteSongs } = this.props;
+    const { music, isFavorite } = this.props;
+    const { handleLoading, updateFavoriteSongs } = this.props;
+
     handleLoading();
-    await addSong(music);
+
+    await this.handleSong(music, isFavorite);
     await updateFavoriteSongs();
+
     handleLoading();
   };
 
   render() {
-    const { music: { trackName, previewUrl, trackId }, isFavorite } = this.props;
+    const { music, isFavorite } = this.props;
+    const { trackName, previewUrl, trackId } = music;
 
     return (
       <li>
