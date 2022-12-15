@@ -21,8 +21,8 @@ export default class SearchContent extends Component {
 
 SearchContent.propTypes = {
   albums: PropTypes.arrayOf(
-    PropTypes.object.isRequired,
-  ).isRequired,
-  isLoading: PropTypes.bool.isRequired,
-  searchWasDone: PropTypes.bool.isRequired,
-};
+    PropTypes.object,
+  ),
+  isLoading: PropTypes.bool,
+  searchWasDone: PropTypes.bool,
+}.isRequired;

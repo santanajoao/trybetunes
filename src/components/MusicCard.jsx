@@ -56,11 +56,11 @@ export default class MusicCard extends Component {
 
 MusicCard.propTypes = {
   music: PropTypes.shape({
-    trackId: PropTypes.number.isRequired,
-    trackName: PropTypes.string.isRequired,
-    previewUrl: PropTypes.string.isRequired,
-  }).isRequired,
-  handleLoading: PropTypes.func.isRequired,
-  isFavorite: PropTypes.bool.isRequired,
-  updateFavoriteSongs: PropTypes.func.isRequired,
-};
+    trackId: PropTypes.number,
+    trackName: PropTypes.string,
+    previewUrl: PropTypes.string,
+  }),
+  handleLoading: PropTypes.func,
+  isFavorite: PropTypes.bool,
+  updateFavoriteSongs: PropTypes.func,
+}.isRequired;

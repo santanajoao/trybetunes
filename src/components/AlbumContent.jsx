@@ -50,11 +50,11 @@ export default class AlbumContent extends Component {
 }
 
 AlbumContent.propTypes = {
-  collectionName: PropTypes.string.isRequired,
-  artistName: PropTypes.string.isRequired,
+  collectionName: PropTypes.string,
+  artistName: PropTypes.string,
   albumMusics: PropTypes.arrayOf(
-    PropTypes.object.isRequired,
-  ).isRequired,
-  isLoading: PropTypes.bool.isRequired,
-  handleLoading: PropTypes.func.isRequired,
-};
+    PropTypes.object,
+  ),
+  isLoading: PropTypes.bool,
+  handleLoading: PropTypes.func,
+}.isRequired;
