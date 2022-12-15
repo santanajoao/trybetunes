@@ -22,7 +22,7 @@ export default class MusicCard extends Component {
   };
 
   render() {
-    const { music: { trackName, previewUrl, trackId }, checked } = this.props;
+    const { music: { trackName, previewUrl, trackId } } = this.props;
     const { isFavorite } = this.state;
 
     return (
