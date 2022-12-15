@@ -13,17 +13,10 @@ export default class ProfileContent extends Component {
     this.updateUserInfosState();
   }
 
-  handleLoading = () => {
-    this.setState(({ isLoading }) => ({
-      isLoading: !isLoading,
-    }));
-  };
-
   updateUserInfosState = async () => {
-    this.handleLoading();
+    this.setState({ isLoading: true });
     const user = await getUser();
-    this.setState({ userInfos: user });
-    this.handleLoading();
+    this.setState({ userInfos: user, isLoading: false });
   };
 
   render() {
