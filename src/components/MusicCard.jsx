@@ -3,9 +3,14 @@ import PropTypes from 'prop-types';
 import { addSong } from '../services/favoriteSongsAPI';
 
 export default class MusicCard extends Component {
-  // state = {
-  //   isFavorite: false,
-  // };
+  state = {
+    isFavorite: false,
+  };
+
+  componentDidMount() {
+    const { checked } = this.props;
+    this.setState({ isFavorite: checked });
+  }
 
   handleCheckboxClick = async () => {
     const { music, handleLoading, updateFavoriteSongs } = this.props;
@@ -18,7 +23,7 @@ export default class MusicCard extends Component {
 
   render() {
     const { music: { trackName, previewUrl, trackId }, checked } = this.props;
-    // const { isFavorite } = this.state;
+    const { isFavorite } = this.state;
 
     return (
       <li>
@@ -31,15 +36,15 @@ export default class MusicCard extends Component {
         </audio>
 
         <label
-          htmlFor="favorite-input"
+          htmlFor={ `favorite-input-${trackId}` }
           data-testid={ `checkbox-music-${trackId}` }
         >
           Favorita
           <input
-            checked={ checked }
+            checked={ isFavorite }
             type="checkbox"
             onChange={ this.handleCheckboxClick }
-            id="favorite-input"
+            id={ `favorite-input-${trackId}` }
           />
         </label>
       </li>
