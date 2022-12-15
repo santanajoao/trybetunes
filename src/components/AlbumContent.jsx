@@ -2,8 +2,27 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import MusicCard from './MusicCard';
 import Loading from './Loading';
+import { getFavoriteSongs } from '../services/favoriteSongsAPI';
 
 export default class AlbumContent extends Component {
+  state = {
+    favoriteSongs: [],
+  };
+
+  componentDidMount() {
+    this.updateFavoriteSongs();
+  }
+
+  updateFavoriteSongs = async () => {
+    const favoriteSongs = await getFavoriteSongs();
+    this.setState({ favoriteSongs });
+  };
+
+  isFavorite = (id) => {
+    const { favoriteSongs } = this.state;
+    return favoriteSongs.some(({ trackId }) => trackId === id);
+  };
+
   render() {
     const {
       collectionName, artistName, albumMusics, isLoading, handleLoading,
@@ -21,6 +40,8 @@ export default class AlbumContent extends Component {
               key={ music.trackId }
               music={ music }
               handleLoading={ handleLoading }
+              updateFavoriteSongs={ this.updateFavoriteSongs }
+              checked={ this.isFavorite(music.trackId) }
             />
           ))}
         </ul>
