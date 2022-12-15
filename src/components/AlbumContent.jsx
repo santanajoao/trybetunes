@@ -9,7 +9,7 @@ export default class AlbumContent extends Component {
     favoriteSongs: [],
   };
 
-  componentDidMount() {
+  async componentDidMount() {
     this.updateFavoriteSongs();
   }
 
@@ -18,15 +18,12 @@ export default class AlbumContent extends Component {
     this.setState({ favoriteSongs });
   };
 
-  isFavorite = (id) => {
-    const { favoriteSongs } = this.state;
-    return favoriteSongs.some(({ trackId }) => trackId === id);
-  };
-
   render() {
     const {
       collectionName, artistName, albumMusics, isLoading, handleLoading,
     } = this.props;
+
+    const { favoriteSongs } = this.state;
 
     if (isLoading) return <Loading />;
 
@@ -40,8 +37,10 @@ export default class AlbumContent extends Component {
               key={ music.trackId }
               music={ music }
               handleLoading={ handleLoading }
+              isFavorite={
+                favoriteSongs.some(({ trackId }) => trackId === music.trackId)
+              }
               updateFavoriteSongs={ this.updateFavoriteSongs }
-              checked={ this.isFavorite(music.trackId) }
             />
           ))}
         </ul>
