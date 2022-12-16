@@ -30,8 +30,8 @@ export default class Form extends Component {
 }
 
 Form.propTypes = {
-  inputValue: PropTypes.string.isRequired,
-  handleChange: PropTypes.func.isRequired,
-  handleSubmit: PropTypes.func.isRequired,
-  isBtnDisabled: PropTypes.bool.isRequired,
-};
+  inputValue: PropTypes.string,
+  handleChange: PropTypes.func,
+  handleSubmit: PropTypes.func,
+  isBtnDisabled: PropTypes.bool,
+}.isRequired;

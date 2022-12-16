@@ -10,12 +10,30 @@ export default class ProfileEditContent extends Component {
     image: '',
     description: '',
     isLoading: false,
-    isBtnDisabled: false,
+    isBtnDisabled: true,
   };
 
   componentDidMount() {
     this.updateUserInfosState();
   }
+
+  isEmptyString = (string) => !string.replaceAll(' ', '');
+
+  validateSubmitBtn = () => {
+    const { name, email, image, description } = this.state;
+
+    const isEmpty = (
+      this.isEmptyString(name)
+      || this.isEmptyString(email)
+      || this.isEmptyString(image)
+      || this.isEmptyString(description)
+    );
+
+    const validEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.com$/.test(email);
+    this.setState({
+      isBtnDisabled: isEmpty || !validEmail,
+    });
+  };
 
   updateUserInfosState = async () => {
     this.setState({ isLoading: true });
@@ -33,7 +51,7 @@ export default class ProfileEditContent extends Component {
     const { name, value } = target;
     this.setState({
       [name]: value,
-    });
+    }, this.validateSubmitBtn);
   };
 
   handleSubmit = async (event) => {
@@ -112,7 +130,7 @@ export default class ProfileEditContent extends Component {
           disabled={ isBtnDisabled }
           data-testid="edit-button-save"
         >
-          Salvar
+          Editar perfil
         </button>
       </form>
     );
