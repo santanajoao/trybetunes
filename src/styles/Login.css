@@ -55,10 +55,24 @@
   width: 400px;
 }
 
-.login-button:hover {
+.login-button:disabled {
+  background-color: lightblue;
+  cursor: not-allowed;
+}
+
+.login-button:enabled:hover {
   background-color: #002ad4;
 }
 
-.login-button:active {
+.login-button:enabled:active {
   background-color: #0019c3;
+}
+
+.login-loading {
+  background-image: linear-gradient(45deg, var(--main-blue), #01b9e3, #01d5e2);
+}
+
+.login-loading > .loading-message {
+  color: var(--main-blue);
+  font-weight: 400;
 }

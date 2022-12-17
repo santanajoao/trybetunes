@@ -37,7 +37,7 @@ export default class Login extends Component {
   render() {
     const { isBtnDisabled, isLoading, username } = this.state;
 
-    if (isLoading) return <Loading />;
+    if (isLoading) return <Loading className="login-loading" />;
 
     return (
       <div data-testid="page-login" className="Login">
