@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import '../styles/Login.css';
 import { createUser } from '../services/userAPI';
 import Loading from '../components/Loading';
+import Logo from '../components/Logo';
 
 export default class Login extends Component {
   state = {
@@ -38,21 +40,24 @@ export default class Login extends Component {
     if (isLoading) return <Loading />;
 
     return (
-      <div data-testid="page-login">
-        <form onSubmit={ this.handleSubmit }>
+      <div data-testid="page-login" className="Login">
+        <form onSubmit={ this.handleSubmit } className="login-form">
+          <Logo />
           <input
             value={ username }
             type="text"
-            placeholder="Nome"
+            placeholder="qual é o seu nome?"
             onChange={ this.handleChange }
             name="username"
             data-testid="login-name-input"
+            className="name-input"
           />
 
           <button
             type="submit"
             disabled={ isBtnDisabled }
             data-testid="login-submit-button"
+            className="login-button"
           >
             Entrar
           </button>
