@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Loading from './Loading';
 import AlbumsList from './AlbumsList';
+import AlbumNotFound from './AlbumNotFound';
 
 export default class SearchContent extends Component {
   render() {
@@ -10,7 +11,7 @@ export default class SearchContent extends Component {
     if (isLoading) return <Loading />;
 
     if (searchWasDone && albums.length === 0) {
-      return <p>Nenhum álbum foi encontrado</p>;
+      return <AlbumNotFound />;
     }
 
     if (searchWasDone) return <AlbumsList { ...this.props } />;

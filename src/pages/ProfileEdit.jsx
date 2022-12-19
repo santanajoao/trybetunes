@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import Header from '../components/Header';
+import SideBar from '../components/SideBar';
 import ProfileEditContent from '../components/ProfileEditContent';
 
 export default class ProfileEdit extends Component {
   render() {
     return (
       <div data-testid="page-profile-edit">
-        <Header />
+        <SideBar />
         <ProfileEditContent { ...this.props } />
       </div>
     );

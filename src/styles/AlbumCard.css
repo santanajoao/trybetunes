@@ -1,0 +1,30 @@
+.AlbumCard {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  margin: 15px;
+  font-family: sans-serif;
+}
+
+* {
+  text-decoration: none;
+}
+
+.card-image {
+  border-radius: 10px;
+  height: 200px;
+  width: 200px;
+}
+
+.card-name {
+  margin: 6px 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: #3D495C;
+}
+
+.card-artist {
+  font-weight: 400;
+  font-size: 11px;
+  color: #3D495C;
+}

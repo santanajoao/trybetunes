@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
-import Header from '../components/Header';
+import SideBar from '../components/SideBar';
 import FavoritesContent from '../components/FavoritesContent';
+import FavoritesHeader from '../components/FavoritesHeader';
+import '../styles/Favorites.css';
 
 export default class Favorites extends Component {
   render() {
     return (
       <div data-testid="page-favorites">
-        <Header />
-        <FavoritesContent />
+        <SideBar />
+        <main className="main-content">
+          <FavoritesHeader />
+          <FavoritesContent />
+        </main>
       </div>
     );
   }

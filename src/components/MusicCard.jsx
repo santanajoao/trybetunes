@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { addSong, removeSong } from '../services/favoriteSongsAPI';
+import '../styles/MusicCard.css';
 
 export default class MusicCard extends Component {
   handleSong = async (music, isFavorite) => {
@@ -28,8 +29,8 @@ export default class MusicCard extends Component {
     const { trackName, previewUrl, trackId } = music;
 
     return (
-      <li>
-        <h3>{ trackName }</h3>
+      <li className="MusicCard">
+        <h3 className="music-title">{ trackName }</h3>
         <audio data-testid="audio-component" src={ previewUrl } controls>
           <track kind="captions" />
           O seu navegador não suporta o elemento
@@ -37,18 +38,13 @@ export default class MusicCard extends Component {
           .
         </audio>
 
-        <label
-          htmlFor={ `favorite-input-${trackId}` }
-          data-testid={ `checkbox-music-${trackId}` }
-        >
-          Favorita
-          <input
-            checked={ isFavorite }
-            type="checkbox"
-            onChange={ this.handleCheckboxClick }
-            id={ `favorite-input-${trackId}` }
-          />
-        </label>
+        <input
+          checked={ isFavorite }
+          type="checkbox"
+          onChange={ this.handleCheckboxClick }
+          id={ `favorite-input-${trackId}` }
+          className="favorite-input"
+        />
       </li>
     );
   }

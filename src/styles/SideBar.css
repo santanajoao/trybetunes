@@ -1,0 +1,43 @@
+.SideBar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 250px;
+  height: 100vh;
+  background-color: white;
+  padding: 35px 0;
+  flex-shrink: 0;
+  position: fixed;
+}
+
+.Logo {
+  width: 170px;
+  height: 95px;
+}
+
+.SideBar .Loading {
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: min-content;
+  background-color: white;
+  height: 40px
+}
+
+.SideBar .loading-icon {
+  padding: 0;
+  width: 40px;
+  margin: 0;
+  height: 40px;
+
+  margin-right: 10px;
+}
+
+.SideBar .loading-message {
+  padding: 0;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 400;
+  color: #003be5
+}

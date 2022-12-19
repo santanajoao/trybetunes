@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
-import Header from '../components/Header';
+import SideBar from '../components/SideBar';
 import ProfileContent from '../components/ProfileContent';
+import '../styles/Profile.css';
 
 export default class Profile extends Component {
   render() {
     return (
       <div data-testid="page-profile">
-        <Header />
-        <ProfileContent />
+        <SideBar />
+        <section className="main-section">
+          <ProfileContent />
+        </section>
       </div>
     );
   }

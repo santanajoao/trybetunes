@@ -1,0 +1,45 @@
+.Form {
+  height: 30vh;
+  background-image: linear-gradient(45deg, #003be5, #01b9e3, #01d5e2);
+  width: 100%;
+  align-self: flex-start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-input {
+  font-size: 14px;
+  background-color: #ffffff80;
+  text-transform: uppercase;
+  text-align: center;
+  height: 40px;
+  border: none;
+  border-radius: 100px;
+  width: 400px;
+  margin-right: 10px;
+}
+
+.search-input:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+.search-input::placeholder {
+  color: white;
+}
+
+.search-button {
+  cursor: pointer;
+  font-weight: 700;
+  text-transform: uppercase;
+  width: 114px;
+  height: 40px;
+  color: white;
+  background-color: #11e6f3;
+  border: none;
+  border-radius: 25px;
+}
+
+.search-button:hover {
+  background-color: #22f7f4;
+}

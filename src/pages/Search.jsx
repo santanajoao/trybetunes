@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Header from '../components/Header';
+import '../styles/Search.css';
+import SideBar from '../components/SideBar';
 import Form from '../components/Form';
 import SearchContent from '../components/SearchContent';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
@@ -46,10 +47,12 @@ export default class Search extends Component {
     const { handleChange, handleSubmit } = this;
     const props = { handleChange, handleSubmit, ...this.state };
     return (
-      <div data-testid="page-search">
-        <Header />
-        <Form { ...props } />
-        <SearchContent { ...props } />
+      <div data-testid="page-search" className="Search">
+        <SideBar />
+        <main className="search-main">
+          <Form { ...props } />
+          <SearchContent { ...props } />
+        </main>
       </div>
     );
   }

@@ -1,0 +1,36 @@
+.Search {
+  display: flex;
+  align-items: flex-start;
+  justify-items: flex-end;
+}
+
+.search-main {
+  min-height: 100vh;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+  align-items: center;
+  margin-left: 250px;
+}
+
+.Search .Loading {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  height: inherit;
+  background-color: transparent;
+}
+
+.Search .loading-icon {
+  width: 61px;
+  height: 61px;
+  margin-bottom: 20px;
+}
+
+.Search .loading-message {
+  font-size: 50px;
+  font-weight: 400;
+  color: rgba(192, 195, 201, 1);
+}

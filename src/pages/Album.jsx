@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Header from '../components/Header';
+import SideBar from '../components/SideBar';
 import getMusics from '../services/musicsAPI';
 import AlbumContent from '../components/AlbumContent';
 
@@ -36,7 +36,7 @@ export default class Album extends Component {
   render() {
     return (
       <div data-testid="page-album">
-        <Header />
+        <SideBar />
         <AlbumContent { ...this.state } handleLoading={ this.handleLoading } />
       </div>
     );

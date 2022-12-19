@@ -37,31 +37,31 @@ export default class Login extends Component {
   render() {
     const { isBtnDisabled, isLoading, username } = this.state;
 
-    if (isLoading) return <Loading className="login-loading" />;
-
     return (
       <div data-testid="page-login" className="Login">
-        <form onSubmit={ this.handleSubmit } className="login-form">
-          <Logo />
-          <input
-            value={ username }
-            type="text"
-            placeholder="qual é o seu nome?"
-            onChange={ this.handleChange }
-            name="username"
-            data-testid="login-name-input"
-            className="name-input"
-          />
+        { isLoading ? <Loading /> : (
+          <form onSubmit={ this.handleSubmit } className="login-form">
+            <Logo />
+            <input
+              value={ username }
+              type="text"
+              placeholder="qual é o seu nome?"
+              onChange={ this.handleChange }
+              name="username"
+              data-testid="login-name-input"
+              className="name-input"
+            />
 
-          <button
-            type="submit"
-            disabled={ isBtnDisabled }
-            data-testid="login-submit-button"
-            className="login-button"
-          >
-            Entrar
-          </button>
-        </form>
+            <button
+              type="submit"
+              disabled={ isBtnDisabled }
+              data-testid="login-submit-button"
+              className="login-button"
+            >
+              Entrar
+            </button>
+          </form>
+        ) }
       </div>
     );
   }

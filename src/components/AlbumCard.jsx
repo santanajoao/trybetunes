@@ -1,15 +1,25 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import '../styles/AlbumCard.css';
 
 export default class AlbumCard extends Component {
   render() {
-    const { artistName, artworkUrl100, collectionName } = this.props;
+    const { artistName, artworkUrl100, collectionName, collectionId } = this.props;
     return (
-      <li>
-        <img src={ artworkUrl100 } alt={ collectionName } />
-        <h3>{ collectionName }</h3>
-        <h4>{ artistName }</h4>
-      </li>
+      <Link
+        to={ `/album/${collectionId}` }
+        data-testid={ `link-to-album-${collectionId}` }
+        className="AlbumCard"
+      >
+        <img
+          src={ artworkUrl100 }
+          className="card-image"
+          alt={ collectionName }
+        />
+        <h3 className="card-name">{ collectionName }</h3>
+        <h4 className="card-artist">{ artistName }</h4>
+      </Link>
     );
   }
 }

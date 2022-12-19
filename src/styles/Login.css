@@ -24,7 +24,7 @@
 }
 
 .Logo {
-  margin-bottom: 70px;
+  margin: 35px 0 70px;
 }
 
 .name-input {
@@ -68,11 +68,21 @@
   background-color: #0019c3;
 }
 
-.login-loading {
-  background-image: linear-gradient(45deg, var(--main-blue), #01b9e3, #01d5e2);
+.Login .Loading {
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.login-loading > .loading-message {
-  color: var(--main-blue);
+.Login .loading-icon {
+  height: 61px;
+  width: 61px;
+  margin-bottom: 30px;
+}
+
+.Login .loading-message {
+  color: rgba(0, 59, 229, 1);
   font-weight: 400;
+  font-size: 50px;
 }

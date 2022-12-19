@@ -1,0 +1,16 @@
+.FavoritesHeader {
+  height: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(45deg, #003be5, #01b9e3, #01d5e2);
+  width: 100%;
+  margin-bottom: 60px;
+}
+
+.header-title {
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+  font-family: sans-serif;
+}

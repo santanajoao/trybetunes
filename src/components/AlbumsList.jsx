@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import AlbumCard from './AlbumCard';
+import '../styles/AlbumsList.css';
 
 export default class AlbumsList extends Component {
   render() {
@@ -9,17 +9,15 @@ export default class AlbumsList extends Component {
 
     return (
       <div className="AlbumsList">
-        <p>{ `Resultado de álbuns de: ${artistName}` }</p>
+        <p className="message">{ `Resultado de álbuns de: ${artistName}` }</p>
 
-        <ul>
+        <ul className="list">
           {albums.map((album) => (
-            <Link
+            <li
               key={ album.collectionId }
-              to={ `/album/${album.collectionId}` }
-              data-testid={ `link-to-album-${album.collectionId}` }
             >
               <AlbumCard { ...album } />
-            </Link>))}
+            </li>))}
         </ul>
       </div>
     );
