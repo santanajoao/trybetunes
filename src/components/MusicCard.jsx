@@ -14,14 +14,10 @@ export default class MusicCard extends Component {
 
   handleCheckboxClick = async () => {
     const { music, isFavorite } = this.props;
-    const { handleLoading, updateFavoriteSongs } = this.props;
-
-    handleLoading();
+    const { updateFavoriteSongs } = this.props;
 
     await this.handleSong(music, isFavorite);
     await updateFavoriteSongs();
-
-    handleLoading();
   };
 
   render() {

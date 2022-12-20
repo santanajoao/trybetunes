@@ -13,10 +13,6 @@ export default class FavoritesContent extends Component {
     this.updateFavoriteSongs();
   }
 
-  handleLoading = () => {
-    this.setState(({ isLoading }) => ({ isLoading: !isLoading }));
-  };
-
   updateFavoriteSongs = async () => {
     this.setState({ isLoading: true });
     const favoriteSongs = await getFavoriteSongs();
@@ -39,7 +35,6 @@ export default class FavoritesContent extends Component {
           <MusicCard
             key={ music.trackId }
             music={ music }
-            handleLoading={ this.handleLoading }
             isFavorite
             updateFavoriteSongs={ this.updateFavoriteSongs }
           />
