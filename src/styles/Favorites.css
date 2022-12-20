@@ -1,28 +1,28 @@
 .main-content {
+  align-items: center;
+  display: flex;
   flex-direction: column;
   margin-left: 250px;
   min-height: 100vh;
-  display: flex;
-  align-items: center;
 }
 
 .main-content .Loading {
-  margin-top: -30px;
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   flex-grow: 1;
+  justify-content: center;
+  margin-top: -30px;
 }
 
 .main-content .loading-icon {
   height: 61px;
-  width: 61px;
   margin-bottom: 20px;
+  width: 61px;
 }
 
 .main-content .loading-message {
+  color: #c0c3c9;
   font-size: 49px;
   font-weight: 400;
-  color: #C0C3C9;
 }

@@ -9,7 +9,7 @@ export default class ProfileEditContent extends Component {
   state = {
     name: '',
     email: '',
-    image: '',
+    image: userImg,
     description: '',
     isLoading: false,
     isBtnDisabled: true,
@@ -40,10 +40,11 @@ export default class ProfileEditContent extends Component {
   updateUserInfosState = async () => {
     this.setState({ isLoading: true });
     const { name, email, image, description } = await getUser();
+    const { image: prevImg } = this.state;
     this.setState({
       name,
       email,
-      image,
+      image: image || prevImg,
       description,
       isLoading: false,
     });
@@ -81,13 +82,13 @@ export default class ProfileEditContent extends Component {
         <header className="profile-header" />
         <form onSubmit={ this.handleSubmit } className="profile-form">
           <img
-            src={ image || userImg }
+            src={ image }
             data-testid="profile-image"
             className="profile-image"
             alt={ name }
           />
           <input
-            value={ image || userImg }
+            value={ image }
             type="text"
             placeholder="Insira um link"
             onChange={ this.handleChange }

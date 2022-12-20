@@ -1,9 +1,9 @@
 .AlbumCard {
   display: flex;
   flex-direction: column;
-  width: 200px;
-  margin: 15px;
   font-family: sans-serif;
+  margin: 15px;
+  width: 200px;
 }
 
 * {
@@ -17,14 +17,14 @@
 }
 
 .card-name {
-  margin: 6px 0;
+  color: #3d495c;
   font-size: 14px;
   font-weight: 700;
-  color: #3D495C;
+  margin: 6px 0;
 }
 
 .card-artist {
-  font-weight: 400;
+  color: #3d495c;
   font-size: 11px;
-  color: #3D495C;
+  font-weight: 400;
 }

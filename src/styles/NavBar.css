@@ -1,9 +1,9 @@
 .NavBar {
   align-items: center;
-  width: 100%;
-  margin-bottom: 120px;
   font-family: sans-serif;
   height: fit-content;
+  margin-bottom: 120px;
+  width: 100%;
 }
 
 .links-list {
@@ -16,17 +16,17 @@
 }
 
 .links-list a {
+  align-items: center;
+  display: flex;
+  justify-content: center;
   padding: 20px 0;
   text-decoration: none;
-  display: flex;
-  align-items: center;
   width: 100%;
-  justify-content: center;
 }
 
 .links-list span {
-  font-size: 16px;
   color: #444955;
+  font-size: 16px;
 }
 
 .links-list a:hover {

@@ -1,36 +1,36 @@
 .Search {
-  display: flex;
   align-items: flex-start;
+  display: flex;
   justify-items: flex-end;
 }
 
 .search-main {
-  min-height: 100vh;
-  flex-grow: 1;
+  align-items: center;
+  align-self: flex-end;
   display: flex;
   flex-direction: column;
-  align-self: flex-end;
-  align-items: center;
+  flex-grow: 1;
   margin-left: 250px;
+  min-height: 100vh;
 }
 
 .Search .Loading {
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  background-color: transparent;
+  flex-direction: column;
   flex-grow: 1;
   height: inherit;
-  background-color: transparent;
+  justify-content: center;
 }
 
 .Search .loading-icon {
-  width: 61px;
   height: 61px;
   margin-bottom: 20px;
+  width: 61px;
 }
 
 .Search .loading-message {
+  color: rgba(192, 195, 201, 1);
   font-size: 50px;
   font-weight: 400;
-  color: rgba(192, 195, 201, 1);
 }

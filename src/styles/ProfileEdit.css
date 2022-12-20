@@ -1,35 +1,39 @@
+.ProfileEdit {
+  padding-bottom: 30px;
+}
+
 .profile-header {
-  height: 30vh;
   background-image: linear-gradient(45deg, #003be5, #01b9e3, #01d5e2);
+  height: 30vh;
 }
 
 .main-section .Loading {
-  height: 100vh;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
+  height: 100vh;
   justify-content: center;
 }
 
 .main-section .loading-icon {
-  width: 61px;
   height: 61px;
   margin-bottom: 20px;
+  width: 61px;
 }
 
 .main-section .loading-message {
+  color: rgba(192, 195, 201, 1);
   font-size: 50px;
   font-weight: 400;
-  color: rgba(192, 195, 201, 1);
 }
 
 .profile-image {
-  width: 240px;
+  border-radius: 50%;
+  box-shadow: 0 10px 8px rgba(0, 0, 0, 0.2);
   height: 240px;
+  left: 300px;
   position: absolute;
   top: 75px;
-  left: 300px;
-  box-shadow: 0px 10px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 50%
+  width: 240px;
 }
 
 .infos-list {
@@ -41,56 +45,56 @@
 }
 
 .profile-form label {
-  font-size: 16px;
-  font-weight: 700;
-  color: #3D495C;
-  font-family: sans-serif;
+  color: #3d495c;
   display: flex;
   flex-direction: column;
-  width: 288px;
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: 700;
   margin-top: 30px;
+  width: 288px;
 }
 
 .profile-form p {
-  font-weight: 400;
   font-size: 12px;
+  font-weight: 400;
   margin-top: 5px;
 }
 
 .infos-list input {
-  border: none;
-  border-bottom: 1px solid #3D495C;
   background-color: white;
-  height: 40px;
+  border: none;
+  border-bottom: 1px solid #3d495c;
   font-size: 14px;
+  height: 40px;
   margin-top: 10px;
   padding-left: 10px;
 }
 
 .infos-list textarea {
-  border: none;
-  border-bottom: 1px solid #3D495C;
   background-color: white;
-  height: 106px;
-  width: 490px;
-  resize: none;
+  border: none;
+  border-bottom: 1px solid #3d495c;
   font-size: 14px;
-  padding: 10px 0 0 10px;
+  height: 106px;
   margin-top: 10px;
+  padding: 10px 0 0 10px;
+  resize: none;
+  width: 490px;
 }
 
 .image-input {
   background-color: transparent;
-  position: absolute;
-  left: 330px;
-  top: 330px;
-  width: 192px;
-  height: 37px;
-  border-radius: 2px;
   border: 1px solid rgba(68, 73, 85, 1);
+  border-radius: 2px;
   font-size: 12px;
   font-weight: 400;
+  height: 37px;
+  left: 330px;
+  position: absolute;
   text-align: center;
+  top: 330px;
+  width: 192px;
 }
 
 .image-input::placeholder {
@@ -99,16 +103,16 @@
 
 .edit-profile-btn {
   background-color: rgba(0, 59, 229, 1);
-  width: 152px;
-  height: 40px;
-  text-transform: uppercase;
+  border: none;
+  border-radius: 100px;
   color: white;
+  cursor: pointer;
   font-size: 14px;
   font-weight: 700;
-  border-radius: 100px;
+  height: 40px;
   margin-top: 30px;
-  border: none;
-  cursor: pointer;
+  text-transform: uppercase;
+  width: 152px;
 }
 
 .edit-profile-btn:disabled {
