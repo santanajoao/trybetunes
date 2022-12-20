@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import MusicCard from './MusicCard';
 import Loading from './Loading';
 import { getFavoriteSongs } from '../services/favoriteSongsAPI';
+import '../styles/AlbumContent.css';
 
 export default class AlbumContent extends Component {
   state = {
@@ -14,13 +15,17 @@ export default class AlbumContent extends Component {
   }
 
   updateFavoriteSongs = async () => {
+    const { handleLoading } = this.props;
+    handleLoading();
     const favoriteSongs = await getFavoriteSongs();
     this.setState({ favoriteSongs });
+    handleLoading();
   };
 
   render() {
     const {
-      collectionName, artistName, albumMusics, isLoading, handleLoading,
+      collectionName, artistName, albumMusics,
+      isLoading, handleLoading, albumCape,
     } = this.props;
 
     const { favoriteSongs } = this.state;
@@ -28,10 +33,20 @@ export default class AlbumContent extends Component {
     if (isLoading) return <Loading />;
 
     return (
-      <main>
-        <h1 data-testid="album-name">{ collectionName }</h1>
-        <h2 data-testid="artist-name">{ artistName }</h2>
-        <ul>
+      <main className="AlbumContent">
+        <header className="album-header">
+          <img src={ albumCape } className="album-cape" alt="Capa do álbum" />
+          <section className="name-n-artist">
+            <h1 data-testid="album-name" className="album-title">
+              { collectionName }
+            </h1>
+            <h2 data-testid="artist-name" className="album-artist">
+              { artistName }
+            </h2>
+          </section>
+        </header>
+
+        <ul className="musics-list">
           {albumMusics.map((music) => (
             <MusicCard
               key={ music.trackId }

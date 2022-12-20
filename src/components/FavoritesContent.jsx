@@ -18,8 +18,12 @@ export default class FavoritesContent extends Component {
   };
 
   updateFavoriteSongs = async () => {
+    this.setState({ isLoading: true });
     const favoriteSongs = await getFavoriteSongs();
-    this.setState({ favoriteSongs });
+    this.setState({
+      favoriteSongs,
+      isLoading: false,
+    });
   };
 
   render() {

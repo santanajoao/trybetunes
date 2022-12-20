@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { getUser, updateUser } from '../services/userAPI';
 import Loading from './Loading';
+import LabelInput from './LabelInput';
+import userImg from '../assets/user-icon.png';
 
 export default class ProfileEditContent extends Component {
   state = {
@@ -75,64 +77,69 @@ export default class ProfileEditContent extends Component {
     if (isLoading) return <Loading />;
 
     return (
-      <form onSubmit={ this.handleSubmit }>
-        <img src={ image } data-testid="profile-image" alt={ name } />
-        <input
-          value={ image }
-          type="text"
-          onChange={ this.handleChange }
-          name="image"
-          data-testid="edit-input-image"
-        />
-        <ul>
-          <li>
-            <label htmlFor="input-name">
-              Nome
-              <input
+      <>
+        <header className="profile-header" />
+        <form onSubmit={ this.handleSubmit } className="profile-form">
+          <img
+            src={ image || userImg }
+            data-testid="profile-image"
+            className="profile-image"
+            alt={ name }
+          />
+          <input
+            value={ image || userImg }
+            type="text"
+            placeholder="Insira um link"
+            onChange={ this.handleChange }
+            name="image"
+            data-testid="edit-input-image"
+            className="image-input"
+          />
+          <ul className="infos-list">
+            <li>
+              <LabelInput
+                complement="name"
+                paragraph="Fique à vontade para usar seu nome social"
+                placeholder="Nome"
                 value={ name }
                 type="text"
-                onChange={ this.handleChange }
-                name="name"
-                id="input-name"
-                data-testid="edit-input-name"
+                handleChange={ this.handleChange }
+                label="Nome"
               />
-            </label>
-          </li>
-          <li>
-            <label htmlFor="input-email">
-              E-mail
-              <input
+            </li>
+            <li>
+              <LabelInput
+                complement="email"
+                placeholder="seu_nome@email.com"
+                paragraph="Escolha um e-mail que consulte diariamente"
                 value={ email }
                 type="text"
-                onChange={ this.handleChange }
-                name="email"
-                id="input-email"
-                data-testid="edit-input-email"
+                handleChange={ this.handleChange }
+                label="E-mail"
               />
-            </label>
-          </li>
-          <li>
-            <label htmlFor="input-description">
-              Descrição
-              <textarea
+            </li>
+            <li>
+              <LabelInput
+                placeholder="Sobre mim"
+                complement="description"
                 value={ description }
-                onChange={ this.handleChange }
-                name="description"
-                id="input-description"
-                data-testid="edit-input-description"
+                type="textarea"
+                handleChange={ this.handleChange }
+                label="Descrição"
               />
-            </label>
-          </li>
-        </ul>
+            </li>
+          </ul>
 
-        <button
-          type="submit"
-          disabled={ isBtnDisabled }
-          data-testid="edit-button-save"
-        >
-          Editar perfil
-        </button>
-      </form>
+          <button
+            type="submit"
+            disabled={ isBtnDisabled }
+            data-testid="edit-button-save"
+            className="edit-profile-btn"
+          >
+            Salvar
+          </button>
+        </form>
+      </>
     );
   }
 }

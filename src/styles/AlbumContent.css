@@ -1,0 +1,40 @@
+.album-header {
+  height: 30vh;
+  background-image: linear-gradient(45deg, #003be5, #01b9e3, #01d5e2);
+  color: white;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: row;
+}
+
+.album-cape {
+  position: absolute;
+  top: 13vh;
+  left: 300px;
+  width: 240px;
+  height: 240px;
+  border-radius: 12px;
+  box-shadow: -9px 8px 8px rgba(68, 73, 85, 0.2);
+}
+
+.name-n-artist {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-left: 330px;
+  margin-bottom: 35px;
+}
+
+.album-title {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.album-artist {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.musics-list {
+  margin-left: 330px;
+}

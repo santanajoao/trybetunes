@@ -10,6 +10,7 @@ export default class Album extends Component {
     collectionName: '',
     artistName: '',
     isLoading: false,
+    albumCape: '',
   };
 
   componentDidMount() {
@@ -18,26 +19,33 @@ export default class Album extends Component {
 
   updateAlbumMusics = async () => {
     const { match: { params } } = this.props;
+
     const musics = await getMusics(params.id);
-    const { artistName, collectionName } = musics[0];
+    const { artistName, collectionName, artworkUrl100 } = musics[0];
     this.setState({
       artistName,
       collectionName,
       albumMusics: musics.slice(1),
+      albumCape: artworkUrl100,
     });
   };
 
   handleLoading = () => {
-    this.setState(({ isLoading }) => ({
-      isLoading: !isLoading,
-    }));
+    this.setState(({ isLoading }) => {
+      if (isLoading) {
+        return { isLoading: false };
+      }
+      return { isLoading: true };
+    });
   };
 
   render() {
     return (
       <div data-testid="page-album">
         <SideBar />
-        <AlbumContent { ...this.state } handleLoading={ this.handleLoading } />
+        <section className="main-section">
+          <AlbumContent { ...this.state } handleLoading={ this.handleLoading } />
+        </section>
       </div>
     );
   }
