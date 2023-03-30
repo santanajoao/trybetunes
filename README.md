@@ -1,10 +1,10 @@
 # Trybetunes
 
-Aplicação react de busca e reprodução de músicas do seu artista favorito com a API do itunes. Todas as informações que precisam persistir ficam salvas no localStorage.
+Aplicação react de busca e reprodução de músicas do seu artista favorito com a API do itunes.
 
 ## Sobre o projeto
 
-O projeto é uma aplicação de músicas que possui varias telas.
+O projeto é uma aplicação de músicas que possui varias telas. Todas as informações que precisam persistir ficam salvas no localStorage.
 
 - ### Tela de entrada
 A tela inicial onde o usuário pode entrar com um nome de usuário
