@@ -1,0 +1,60 @@
+.Profile {
+  display: flex;
+  flex-direction: column;
+}
+
+.Profile__container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin-left: 250px;
+  min-height: 100vh;
+  background-color: #eff3f9;
+}
+
+.Profile__main {
+  margin-left: 350px;
+  max-width: 570px;
+}
+
+.Profile__picture {
+  border-radius: 50%;
+  box-shadow: -9px 8px 8px #00000033;
+  height: 240px;
+  object-fit: cover;
+  width: 240px;
+  position: absolute;
+  top: 75px;
+  left: 320px;
+}
+
+.Profile h2 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #3D495C;
+  margin: 20px 0 5px;
+}
+
+.Profile span, .Profile p {
+  font-size: 14px;
+  font-weight: 400;
+  color: #3D495C;
+  padding-right: 20px;
+  text-align: justify;
+}
+
+.Profile__link-btn {
+  align-items: center;
+  background-color: #003BE5;
+  border-radius: 100px;
+  color: #fff;
+  display: flex;
+  font-size: 14px;
+  font-weight: 700;
+  height: 40px;
+  justify-content: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 152px;
+  margin-top: 35px;
+}

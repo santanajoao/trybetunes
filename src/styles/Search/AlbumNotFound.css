@@ -1,0 +1,18 @@
+.AlbumNotFound {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.AlbumNotFound__icon {
+  height: 69px;
+  margin-bottom: 20px;
+  width: 69px;
+}
+
+.AlbumNotFound__message {
+  color: #c0c3c9;
+  font-size: 30px;
+  font-weight: 400;
+}

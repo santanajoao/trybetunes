@@ -1,60 +1,24 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import SideBar from '../components/SideBar';
-import getMusics from '../services/musicsAPI';
-import AlbumContent from '../components/AlbumContent';
+import '../styles/Album/Album.css';
+import SideBar from '../components/SideBar/SideBar';
+import AlbumContent from '../components/Album/AlbumContent';
 
 export default class Album extends Component {
-  state = {
-    albumMusics: [],
-    collectionName: '',
-    artistName: '',
-    isLoading: false,
-    albumCape: '',
-  };
-
-  componentDidMount() {
-    this.updateAlbumMusics();
-  }
-
-  updateAlbumMusics = async () => {
-    const { match: { params } } = this.props;
-
-    const musics = await getMusics(params.id);
-    const { artistName, collectionName, artworkUrl100 } = musics[0];
-    this.setState({
-      artistName,
-      collectionName,
-      albumMusics: musics.slice(1),
-      albumCape: artworkUrl100,
-    });
-  };
-
-  handleLoading = () => {
-    this.setState(({ isLoading }) => {
-      if (isLoading) {
-        return { isLoading: false };
-      }
-      return { isLoading: true };
-    });
-  };
-
   render() {
+    const { match, history } = this.props;
     return (
-      <div data-testid="page-album">
-        <SideBar />
-        <section className="main-section">
-          <AlbumContent { ...this.state } handleLoading={ this.handleLoading } />
-        </section>
+      <div className="Album">
+        <SideBar history={ history } />
+        <div className="Album__container">
+          <AlbumContent match={ match } />
+        </div>
       </div>
     );
   }
 }
 
 Album.propTypes = {
-  match: PropTypes.shape({
-    params: PropTypes.shape({
-      id: PropTypes.string.isRequired,
-    }).isRequired,
-  }).isRequired,
+  history: PropTypes.shape({}).isRequired,
+  match: PropTypes.shape({}).isRequired,
 };

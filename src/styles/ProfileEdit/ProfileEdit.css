@@ -1,0 +1,113 @@
+.ProfileEdit {
+  display: flex;
+  flex-direction: column;
+}
+
+.ProfileEdit__container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin-left: 250px;
+  min-height: 100vh;
+  background-color: #eff3f9;
+}
+
+.ProfileEdit__main {
+  margin-left: 350px;
+  max-width: 570px;
+}
+
+.ProfileEdit__main label {
+  display: flex;
+  flex-direction: column;
+}
+
+.image-input-container {
+  position: absolute;
+  top: 75px;
+  left: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ProfileEdit__picture {
+  border-radius: 50%;
+  box-shadow: -9px 8px 8px #00000033;
+  height: 240px;
+  object-fit: cover;
+  width: 240px;
+  margin-bottom: 20px;
+}
+
+.ProfileEdit h2 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #3D495C;
+  margin: 20px 0 5px;
+}
+
+.ProfileEdit span, .ProfileEdit p {
+  font-size: 12px;
+  font-weight: 400;
+  color: #3D495C;
+  padding-right: 20px;
+  text-align: justify;
+}
+
+.ProfileEdit__link-btn {
+  border: none;
+  align-items: center;
+  background-color: #003BE5;
+  border-radius: 100px;
+  color: #fff;
+  display: flex;
+  font-size: 14px;
+  font-weight: 700;
+  height: 40px;
+  justify-content: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 152px;
+  margin-top: 35px;
+  cursor: pointer;
+}
+
+.ProfileEdit__link-btn:disabled {
+  background-color: lightblue;
+}
+
+.ProfileEdit__main input {
+  width: 288px;
+  height: 37px;
+  margin-top: 10px;
+  padding-left: 10px;
+}
+
+.ProfileEdit__main textarea {
+  height: 106px;
+  width: 490px;
+  resize: none;
+  padding: 10px;
+}
+
+.ProfileEdit__main input,
+.ProfileEdit__main textarea {
+  border: none;
+  border-bottom: 1px solid #3d495c;
+}
+
+#image-input {
+  background-color: transparent;
+  border: 1px solid #444955;
+  border-radius: 2px;
+  width: 192px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: rgba(68, 73, 85, 1); 
+}
+
+#image-input:focus {
+  outline: 1px solid #444955;
+}

@@ -1,0 +1,38 @@
+.RoundedInput {
+  border-radius: 100px;
+  font-size: 14px;
+  height: 40px;
+  width: 400px;
+}
+
+.form__input {
+  border: 1px solid #003be5;
+  border-radius: 100px;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.form__input::placeholder {
+  color: #003be5;
+}
+
+.form__input:focus {
+  outline: 1px solid #003be5;
+}
+
+.SearchForm__input {
+  background-color: #ffffff80;
+  border: none;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 4px 42px 0 18px;
+}
+
+.SearchForm__input::placeholder {
+  color: white;
+  text-transform: uppercase;
+}
+
+.SearchForm__input:focus {
+  outline: 1px solid white;
+}

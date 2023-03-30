@@ -7,32 +7,36 @@ import SearchForm from '../components/Search/SearchForm';
 import SearchMainContent from '../components/Search/SearchMainContent';
 import { fetchAlbumsByArtist } from '../utils/itunesAPI';
 
-export default class Search extends Component {
+export default class SearchResult extends Component {
   state = {
-    isLoading: false,
-    searchInput: '',
     albums: [],
-    searchWasDone: false,
+    isLoading: true,
+    searchInput: '',
   };
 
-  handleSearch = async (searchKeyword) => {
-    this.setState({ isLoading: true, searchWasDone: true });
+  componentDidMount() {
+    this.handleMount();
+  }
 
-    const searchInput = searchKeyword.trim().replace(/\s+/g, ' ');
-    const albums = await fetchAlbumsByArtist(searchInput);
+  handleSearch = async (searchInput) => {
+    const { history } = this.props;
+    const searchKeyword = searchInput.replace(/\b\s+\b/g, '+');
+    history.push(`/search/${searchKeyword}/`);
+  };
 
-    this.setState({
-      albums,
-      isLoading: false,
-      searchInput,
-    });
+  handleMount = async () => {
+    const { match: { params } } = this.props;
+    // const albums = await fetchAlbumsByArtist(params.keyword);
+    // this.setState({
+    //   albums,
+    //   isLoading: false,
+    //   searchInput: params.keyword.replace(/\+/g, ' '),
+    // });
   };
 
   render() {
     const { history } = this.props;
-    const {
-      isLoading, searchInput, albums, searchWasDone,
-    } = this.state;
+    const { albums, isLoading, searchInput } = this.state;
     return (
       <div className="Search">
         <SideBar history={ history } />
@@ -45,10 +49,9 @@ export default class Search extends Component {
           </Header>
           <main className="Search__main">
             <SearchMainContent
-              albums={ albums }
-              isLoading={ isLoading }
               searchInput={ searchInput }
-              searchWasDone={ searchWasDone }
+              isLoading={ isLoading }
+              albums={ albums }
             />
           </main>
         </div>
@@ -57,8 +60,13 @@ export default class Search extends Component {
   }
 }
 
-Search.propTypes = {
+SearchResult.propTypes = {
   history: PropTypes.shape({
     push: PropTypes.func,
+  }).isRequired,
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      keyword: PropTypes.string,
+    }),
   }).isRequired,
 };

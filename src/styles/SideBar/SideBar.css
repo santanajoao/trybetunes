@@ -1,0 +1,19 @@
+.SideBar {
+  align-items: center;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
+  padding: 25px 0;
+  position: fixed;
+  width: 250px;
+}
+
+.SideBar__nav {
+  width: 100%;
+}
+
+.nav__links-list {
+  list-style: none;
+}

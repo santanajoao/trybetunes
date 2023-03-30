@@ -1,0 +1,43 @@
+.PageNotFound {
+  align-items: center;
+  background-image: linear-gradient(-40deg, #003BE5 12.08%, #00D5E2 86.52%);
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  position: relative;
+  width: 100vw;
+  z-index: 2;
+}
+
+.PageNotFound * {
+  z-index: 2;
+}
+
+.PageNotFound::after {
+  background-image: url('../../assets/page-not-found-bg.svg');
+  background-position: 60px -80px;
+  background-repeat: none;
+  background-size: cover;
+  content: '';
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  z-index: 1;
+}
+
+.PageNotFound__span {
+  color: #003be5;
+  font-size: 122px;
+  font-weight: 400;
+  margin-right: 30px;
+  position: relative;
+}
+
+.PageNotFound__message {
+  color: rgba(0, 213, 226, 1);
+  font-size: 37px;
+  font-weight: 300;
+  position: relative;
+  width: 360px;
+}

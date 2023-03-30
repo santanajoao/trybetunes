@@ -1,0 +1,6 @@
+.MusicsList {
+  list-style: none;
+  width: 591px;
+  display: flex;
+  flex-direction: column;
+}

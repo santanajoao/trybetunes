@@ -1,0 +1,39 @@
+.AlbumCard {
+  width: 200px;
+  margin: 13px;
+}
+
+.AlbumCard__link {
+  border-radius: 10px;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.AlbumCard__image {
+  border-radius: 10px;
+  height: 200px;
+  margin-bottom: 10px;
+  width: 200px;
+}
+
+.AlbumCard__title {
+  color: #3D495C;;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.AlbumCard__link:hover .AlbumCard__image {
+  box-shadow: 0 0 10px rgb(0, 0, 0, 0.1);
+}
+
+.AlbumCard__link:hover .AlbumCard__title,
+.AlbumCard__link:hover .AlbumCard__artist {
+  color: #1b273a;
+}
+
+.AlbumCard__artist {
+  color: #3D495C;
+  font-size: 11px;
+  font-weight: 400;
+}

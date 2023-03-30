@@ -1,0 +1,18 @@
+.SideBarUserCard {
+  align-items: center;
+  display: flex;
+}
+
+.SideBarUserCard__image {
+  border-radius: 50%;
+  height: 40px;
+  margin-right: 10px;
+  object-fit: cover;
+  width: 40px;
+}
+
+.SideBarUserCard__name {
+  color: #444955;
+  font-size: 16px;
+  font-weight: 400;
+}

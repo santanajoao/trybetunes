@@ -1,0 +1,46 @@
+.MusicCard {
+  align-items: center;
+  display: flex;
+  width: 591px;
+  justify-content: right;
+  padding: 20px 0;
+}
+
+.MusicCard:not(:last-of-type) {
+  border-bottom: 1px solid #ccd4e1;
+}
+
+.MusicCard__title {
+  color: #001813;
+  font-size: 14px;
+  font-weight: 400;
+  margin-right: 30px;
+  text-align: center;
+  width: 125px;
+}
+
+.MusicCard__audio {
+  width: 371px;
+  height: 56px;
+  margin-right: 40px;
+  flex-shrink: 0;
+}
+
+.MusicCard__audio::-webkit-media-controls-play-button,
+.MusicCard__audio::-webkit-media-controls-panel {
+  background-color: #fff;
+  color: #fff;
+}
+
+.MusicCard__checkbox {
+  all: unset;
+  width: 22px;
+  height: 20px;
+  display: inline-block;
+  background-image: url('../../assets/unchecked-heart.svg');
+  cursor: pointer;
+}
+
+.MusicCard__checkbox:checked {
+  background-image: url('../../assets/checked-heart.svg');
+}

@@ -1,67 +1,68 @@
 import React, { Component } from 'react';
+import '../styles/Login/Login.css';
 import PropTypes from 'prop-types';
-import '../styles/Login.css';
-import { createUser } from '../services/userAPI';
+import TrybetunesLogo from '../components/TrybetunesLogo';
+import LinkButton from '../components/Login/LinkButton';
+import RoundedInput from '../components/RoundedInput';
+import { saveUserInfos } from '../utils/localstorage';
 import Loading from '../components/Loading';
-import Logo from '../components/Logo';
 
 export default class Login extends Component {
   state = {
-    isBtnDisabled: true,
+    isButtonDisabled: true,
     isLoading: false,
     username: '',
   };
 
-  handleChange = ({ target }) => {
-    const minUsernameLength = 3;
-    const { name, value } = target;
+  onInputChange = ({ target }) => {
+    const { value } = target;
+    const minLength = 3;
+
     this.setState({
-      [name]: value,
-      isBtnDisabled: (value.length < minUsernameLength),
+      username: value,
+      isButtonDisabled: (value.length < minLength),
     });
   };
 
-  handleSubmit = async (event) => {
+  onSubmit = async (event) => {
     event.preventDefault();
-
-    const { username } = this.state;
-    const { history } = this.props;
 
     this.setState({ isLoading: true });
 
-    await createUser({ name: username });
+    const { username } = this.state;
+    await saveUserInfos({ name: username });
 
+    const { history } = this.props;
     history.push('/search');
   };
 
   render() {
-    const { isBtnDisabled, isLoading, username } = this.state;
+    const { isButtonDisabled, isLoading, username } = this.state;
+
+    if (isLoading) {
+      return <Loading className="Login__Loading" />;
+    }
 
     return (
-      <div data-testid="page-login" className="Login">
-        { isLoading ? <Loading /> : (
-          <form onSubmit={ this.handleSubmit } className="login-form">
-            <Logo />
-            <input
+      <div className="Login">
+        <main className="Login__main">
+          <TrybetunesLogo className="Login__trybetunes-logo" />
+          <form onSubmit={ this.onSubmit } className="Login__form">
+            <RoundedInput
               value={ username }
-              type="text"
-              placeholder="qual é o seu nome?"
-              onChange={ this.handleChange }
-              name="username"
-              data-testid="login-name-input"
-              className="name-input"
+              placeholder="qual é seu nome?"
+              onChange={ this.onInputChange }
+              className="form__input"
             />
-
-            <button
-              type="submit"
-              disabled={ isBtnDisabled }
-              data-testid="login-submit-button"
-              className="login-button"
+            <LinkButton
+              to="/search"
+              disabled={ isButtonDisabled }
+              className="form__button"
             >
               Entrar
-            </button>
+            </LinkButton>
           </form>
-        ) }
+        </main>
       </div>
     );
   }
@@ -69,6 +70,6 @@ export default class Login extends Component {
 
 Login.propTypes = {
   history: PropTypes.shape({
-    push: PropTypes.func.isRequired,
+    push: PropTypes.func,
   }).isRequired,
 };

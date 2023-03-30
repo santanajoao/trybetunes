@@ -1,0 +1,28 @@
+.SearchForm {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.SearchForm__button {
+  background-color: #00d5e2;
+  border: none;
+  border-radius: 30px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  height: 40px;
+  padding-top: 4px;
+  width: 114px;
+  margin-left: -10px;
+  text-transform: uppercase;
+}
+
+.SearchForm__search-icon {
+  width: 21px;
+  height: 21px;
+  position: relative;
+  right: 35px;
+}

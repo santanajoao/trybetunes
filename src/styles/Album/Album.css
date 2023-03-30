@@ -1,0 +1,17 @@
+.Album {
+  display: flex;
+  min-height: 100vh;
+}
+
+.Album__container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin-left: 250px;
+}
+
+.Album__main {
+  background-color: #eff3f9;
+  flex-grow: 1;
+  padding: 30px 0 30px 340px;
+}

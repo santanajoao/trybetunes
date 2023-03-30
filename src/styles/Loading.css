@@ -1,20 +1,106 @@
 @keyframes spin {
-
-  from { transform: rotate(0deg); }
-
   to { transform: rotate(360deg); }
 }
 
-.Loading {
-  display: flex;
-}
-
-.loading-icon {
-  animation: spin 1s infinite;
+.Loading__icon {
+  animation: spin 3s infinite;
   transform: rotate(0deg);
 }
 
-.loading-message {
-  font-family: sans-serif;
+.Login__Loading {
+  align-items: center;
+  background: linear-gradient(123.66deg, #003BE5 12.08%, #00D5E2 86.52%);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  width: 100vw;
+}
+
+.Login__Loading::after {
+  background-image: url('../assets/loading-login-bg.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  content: '';
+  height: 100vh;
+  position: absolute;
+  width: 100vw;
+}
+
+.Login__Loading > .Loading__icon {
+  height: 61px;
+  margin-bottom: 20px;
+  width: 61px;
+}
+
+.Login__Loading > .Loading__message {
+  color: #003be5;
+  font-size: 40px;
+  font-weight: 400;
+}
+
+.SideBar__Loading {
+  align-items: center;
+  display: flex;
+  height: 40px;
+}
+
+.SideBar__Loading > .Loading__icon {
+  height: 38px;
+  margin-right: 10px;
+  width: 38x;
+}
+
+.SideBar__Loading > .Loading__message {
+  color: #003be5;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.Search__Loading,
+.Album__Loading,
+.Favorites__Loading,
+.Profile__Loading,
+.ProfileEdit__Loading {
+  align-items: center;
+  background-color: #eff3f9;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.Search__Loading > .Loading__icon,
+.Album__Loading > .Loading__icon,
+.Favorites__Loading > .Loading__icon,
+.Profile__Loading > .Loading__icon,
+.ProfileEdit__Loading > .Loading__icon {
+  height: 61px;
+  margin-bottom: 20px;
+  width: 61px;
+}
+
+.Search__Loading > .Loading__message,
+.Album__Loading > .Loading__message,
+.Favorites__Loading > .Loading__message,
+.Profile__Loading > .Loading__message,
+.ProfileEdit__Loading > .Loading__message {
+  color: #c0c3c9;
+  font-size: 40px;
+  font-weight: 400;
   text-transform: lowercase;
+}
+
+.MusicCard__Loading {
+  height: 20px;
+  width: 22px;
+}
+
+.MusicCard__Loading > .Loading__message {
+  display: none;
+}
+
+.MusicCard__Loading > .Loading__icon {
+  height: 20px;
+  width: 20px;
 }

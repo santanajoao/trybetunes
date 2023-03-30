@@ -1,0 +1,18 @@
+.LinkButton {
+  background-color: #003be5;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-weight: 700;
+  height: 40px;
+  text-transform: uppercase;
+}
+
+.form__button {
+  width: 400px;
+  border-radius: 100px;
+}
+
+.LinkButton:disabled {
+  background-color: lightblue;
+}
