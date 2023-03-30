@@ -4,6 +4,13 @@ Aplicação react de busca e reprodução de músicas do seu artista favorito co
 
 <img src="./readme-assets/trybetunes-screenshot.png" alt="captura de tela da aplicação em funcionamento">
 
+## Veja você mesmo(a):
+
+Acesse o deploy da aplicação nesse link:
+### [https://trybetunes-jpsc.vercel.app/](https://trybetunes-jpsc.vercel.app/)
+
+---
+
 ## Sobre o projeto
 
 O projeto é uma aplicação de músicas que possui varias telas. Todas as informações que precisam persistir ficam salvas no localStorage.
@@ -26,6 +33,8 @@ O projeto é uma aplicação de músicas que possui varias telas. Todas as infor
 
 - ### Tela de perfil
   É a tela onde o usuário pode alterar as informações do seu perfil, como imagem, nome, email e descrição.
+
+---
 
 ## Tecnologias utilizadas
 
